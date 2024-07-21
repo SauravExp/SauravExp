@@ -1,0 +1,99 @@
+-- Configure TempDB
+ALTER DATABASE tempdb MODIFY FILE (NAME = tempdev, SIZE = 1024MB, FILEGROWTH = 512MB);
+ALTER DATABASE tempdb MODIFY FILE (NAME = templog, SIZE = 512MB, FILEGROWTH = 256MB);
+
+-- Add additional data files
+ALTER DATABASE tempdb ADD FILE (NAME = tempdev2, FILENAME = 'D:\TempDB\tempdev2.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+ALTER DATABASE tempdb ADD FILE (NAME = tempdev3, FILENAME = 'D:\TempDB\tempdev3.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+ALTER DATABASE tempdb ADD FILE (NAME = tempdev4, FILENAME = 'D:\TempDB\tempdev4.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+
+
+-- Enable mixed mode authentication
+EXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE', 
+    N'Software\Microsoft\MSSQLServer\MSSQLServer', 
+    N'LoginMode', 
+    REG_DWORD, 
+    2;
+
+-- Create a new database
+CREATE DATABASE MyDatabase;
+GO
+
+-- Set database options
+ALTER DATABASE MyDatabase 
+SET RECOVERY FULL;
+GO
+
+-- Create a new SQL login
+CREATE LOGIN MyLogin WITH PASSWORD = 'MySecurePassword';
+GO
+
+-- Create a new user for the login
+USE MyDatabase;
+GO
+CREATE USER MyUser FOR LOGIN MyLogin;
+GO
+
+-- Grant necessary permissions to the user
+ALTER ROLE db_owner ADD MEMBER MyUser;
+GO
+
+-- Configure max server memory
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+EXEC sp_configure 'max server memory', 4096; -- Set max memory to 4GB
+RECONFIGURE;
+GO
+
+-- Set up SQL Server Agent to auto start
+EXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE', 
+    N'Software\Microsoft\MSSQLServer\SQLServerAgent', 
+    N'StartupType', 
+    REG_DWORD, 
+    2;
+GO
+
+-- Configure TempDB
+ALTER DATABASE tempdb MODIFY FILE (NAME = tempdev, SIZE = 1024MB, FILEGROWTH = 512MB);
+ALTER DATABASE tempdb MODIFY FILE (NAME = templog, SIZE = 512MB, FILEGROWTH = 256MB);
+
+-- Add additional data files
+ALTER DATABASE tempdb ADD FILE (NAME = tempdev2, FILENAME = 'D:\TempDB\tempdev2.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+ALTER DATABASE tempdb ADD FILE (NAME = tempdev3, FILENAME = 'D:\TempDB\tempdev3.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+ALTER DATABASE tempdb ADD FILE (NAME = tempdev4, FILENAME = 'D:\TempDB\tempdev4.ndf', SIZE = 1024MB, FILEGROWTH = 512MB);
+------------------------------------------------
+Post-Installation Configuration
+Apply Updates
+
+    Apply the latest SQL Server patches and cumulative updates.
+
+Performance Tuning
+
+    Initial Settings: Set max degree of parallelism, cost threshold for parallelism, and configure index maintenance plans.
+    Query Optimization: Regularly analyze and optimize slow-running queries.
+
+Security Configuration
+
+    Server-Level Security: Configure firewalls and network security.
+    Database-Level Security: Implement roles, permissions, and encryption.
+    Compliance: Ensure data security compliance with organizational policies.
+
+5. Backup and Recovery
+
+    Implement a comprehensive backup strategy:
+        Full Backups: Weekly.
+        Differential Backups: Daily.
+        Transaction Log Backups: Every few hours.
+    Store backups on separate drives or external storage.
+
+6. Monitoring and Maintenance
+
+    Use SQL Server Management Studio (SSMS) and third-party tools for monitoring.
+    Regularly perform maintenance tasks:
+        Index Rebuilds/Reorganizations
+        Statistics Updates
+        Database Integrity Checks
+
+Conclusion
+
+By following this guide, you can ensure a robust and efficient SQL Server 2019 installation that meets the high demands of a large organization. Regular maintenance and tuning will help maintain optimal performance and security.

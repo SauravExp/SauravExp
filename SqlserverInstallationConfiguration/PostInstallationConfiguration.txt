@@ -1,3 +1,5 @@
+https://github.com/SauravExp/SauravExp/tree/master
+
 -- Configure TempDB
 ALTER DATABASE tempdb MODIFY FILE (NAME = tempdev, SIZE = 1024MB, FILEGROWTH = 512MB);
 ALTER DATABASE tempdb MODIFY FILE (NAME = templog, SIZE = 512MB, FILEGROWTH = 256MB);

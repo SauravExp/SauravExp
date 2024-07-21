@@ -1,0 +1,18 @@
+1. Login in to the GitHub
+2. Create GITHUB-- New Repository
+3. In that Repo Create folder .GitHub/workflows
+4. go to the folder which you want to upload in the GitHub
+5. git init
+6. git add .
+7. git commit -am "Initial Commit"
+8. git remote add origin https://github.com/reporName/repoName.git[ copy it from git hub]
+9. git push origin master
+if New Changes
+10. git commit -m "My New Change"
+	git add .
+	git commit -m "my New change"
+	git push origin master
+11. TO pull in the Git HUB
+	git pull origin master.
+
+

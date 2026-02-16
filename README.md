@@ -1,4 +1,4 @@
-- 👋 Senior Database Architect | SQL Server | PostgreSQL | DB2| ORACLE | EDB HA | Cloud & ETL Specialist | 17+ Years in Insurance & Banking IT
+- 👋 Senior Database Administrator & Architect | SQL Server | PostgreSQL | DB2| ORACLE | EDB HA | Cloud & ETL Specialist | 17+ Years in Insurance & Banking IT
 - 👀 🔹 Database Architect & Administration Expert  
 🔹 High Availability & Disaster Recovery Specialist  
 🔹 Cloud & On-Prem Infrastructure Engineer  

@@ -36,10 +36,11 @@ Senior Engineer (Database Lead) – ThakralOne Nepal
 ### ETL & Data Engineering
 - SSIS
 - Data Migration
-- Data Warehousing
+- Data Warehousing (UNSTRUCTURED Database to Debezium,kafka,spark,python,Object Storage(bronze,Silver,Gold)--> RDBMS(SQLSERVER,POSTGRESQL any Structured Database)
 - Index Optimization
 - Performance Tuning
 - Data Integrity & Security
+- Data Archiving
 
 ### Reporting & BI
 - SSRS

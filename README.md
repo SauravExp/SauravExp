@@ -46,6 +46,7 @@ Senior Engineer (Database Lead) – ThakralOne Nepal
 - SSRS
 - Tableau
 - MIS Reporting
+- Grafana
 
 
 ### Programming & Automation

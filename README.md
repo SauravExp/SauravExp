@@ -67,7 +67,14 @@ Senior Engineer (Database Lead) – ThakralOne Nepal
 ### AI + Database
 - Database Embedding (pg_vector)
 - NLP (Text-to-Data)
-- Google Gemini Pro Integration
+- Google Gemini Pro Integration or any Model integration
+
+#TemenosT24 #T24CoreBanking #DataEngineering #ETLPipeline 
+#ApacheSpark #PySpark #SQLServer #PostgreSQL 
+#MinIO #DeltaLake #Parquet #DataLake 
+#CDC #BankingTechnology #LakehouseArchitecture #Medallion
+
+
 <!---
 SauravExp/SauravExp is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
